@@ -9,13 +9,13 @@ Learn more about the Human Readable ABI format [here](https://docs.ethers.org/v5
 ## Usage
 
 ```bash
-npx onmax/address-to-human-abi <address>
+npx address-to-human-abi <address>
 ```
 
 ```bash
-npx onmax/address-to-human-abi <address> --save # Will create a file named <address>.json
+npx address-to-human-abi <address> --save # Will create a file named <address>.json
 ```
 
 ```bash
-npx onmax/address-to-human-abi <address> --save <filename> # Will create a file named <filename>.json
+npx address-to-human-abi <address> --save <filename> # Will create a file named <filename>.json
 ```

@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { writeFile } from 'fs';
 import axios from 'axios';
 import { Interface } from 'ethers';
