@@ -1,0 +1,14 @@
+{
+  "name": "address-to-human-abi",
+  "version": "1.0.0",
+  "description": "Convert an Ethereum address contract to a human readable ABI",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+  },
+  "dependencies": {
+    "axios": "^1.3.2",
+    "ethers": "^6.0.2"
+  }
+}
