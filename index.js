@@ -11,7 +11,9 @@ if (process.argv.length < 3) {
 }
 
 const CONTRACT_ADDRESS = process.argv[2];
-const abiEndpoint = `https://api.etherscan.io/api?module=contract&action=getabi&address=${CONTRACT_ADDRESS}`;
+const abiEndpoint = `http://api.polygonscan.com/api?module=contract&action=getabi&address=${CONTRACT_ADDRESS}&format=raw`;
+
+console.log(`Contract address: ${CONTRACT_ADDRESS}`);
 
 let save = false;
 let outputPath = `./abi-${CONTRACT_ADDRESS}.json`;
@@ -33,12 +35,9 @@ console.log(`Address contract: https://etherscan.io/address/${CONTRACT_ADDRESS}`
 
 axios.get(abiEndpoint)
     .then(function (response) {
-        const abi = response.data.result;
-        const jsonAbi = JSON.parse(abi);
-        const iface = new Interface(jsonAbi);
-        const abiHuman = iface.format('full');
+        const iface = new Interface(response.data);
+        const abiHuman = iface.format(false);
 
-        console.log('ABI Human Readable:');
         console.log(abiHuman);
 
         if (save) {
